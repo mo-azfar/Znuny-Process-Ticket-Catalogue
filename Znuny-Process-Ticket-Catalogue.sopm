@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
     <Name>Znuny-Process-Ticket-Catalogue</Name>
-    <Version>7.0.1</Version>
+    <Version>7.0.2</Version>
     <Vendor>mo-azfar</Vendor>
     <URL>https://github.com/mo-azfar/</URL>
     <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
     <ChangeLog Version="7.0.1" Date="2024-04-01 16:00:00 +0800">New package.</ChangeLog>
+    <ChangeLog Version="7.0.2" Date="2024-04-08 12:00:00 +0800">JS call only for customer portal.</ChangeLog>
     <Description Lang="en">Show a process catalogue in agent and customer portal.</Description>
     <Framework>7.0.x</Framework>
     <IntroInstall Lang="en" Title="Install Information" Type="pre"><![CDATA[
@@ -21,6 +22,7 @@
         <br/>
         Changelog<br/>
         7.0.1 - New package.<br/>
+        7.0.2 - JS call only for customer portal.<br/>
         <br/><br/>
         ((enjoy))<br/>
         <br/>

@@ -55,6 +55,20 @@ sub Run {
     elsif ( $Param{TemplateFile} eq 'CustomerTicketProcess' )
     {
         $URL = $HttpType . '://' . $FQDN . '/' . $ScriptAlias . 'customer.pl?Action=' . $Action;
+
+        #extra parameter or customer process
+        if ($ProcessEntityID)
+        {
+            my $JS = qq~
+                    \$(document).ready(function() {
+                        \$('#ProcessEntityID').val('$ProcessEntityID').trigger('change');
+                    });
+                ~;
+
+            $LayoutObject->AddJSOnDocumentComplete(
+                Code => $JS,
+            );
+        }
     }
 
     #get value from process dropdown element
@@ -151,19 +165,6 @@ sub Run {
 
     #search and replace
     ${ $Param{Data} } =~ s{$SearchField1}{$ReturnField1};
-
-    if ($ProcessEntityID)
-    {
-        my $JS = qq~
-                    \$(document).ready(function() {
-                        \$('#ProcessEntityID').val('$ProcessEntityID').trigger('change');
-                    });
-                ~;
-
-        $LayoutObject->AddJSOnDocumentComplete(
-            Code => $JS,
-        );
-    }
 
     return 1;
 }
